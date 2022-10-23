@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HomeworkAndroidVisual</string>
+    <string name="picture_number">Picture number: </string>
+    <string name="button_number">Change picture </string>
+</resources>
