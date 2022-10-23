@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonNextActivity.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("text", "Second Activity")
             startActivity(intent)
         }
 
