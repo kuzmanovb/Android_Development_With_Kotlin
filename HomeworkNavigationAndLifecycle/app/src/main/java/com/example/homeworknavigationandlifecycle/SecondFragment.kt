@@ -5,11 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.homeworknavigationandlifecycle.databinding.FragmentSecondBinding
 
 class SecondFragment : Fragment() {
 
-    lateinit var binding: FragmentSecondBinding
+    private lateinit var binding: FragmentSecondBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,10 +20,11 @@ class SecondFragment : Fragment() {
         binding = FragmentSecondBinding.inflate(inflater, container, false)
 
         binding.buttonNextFragment.setOnClickListener {
-
+            val action = SecondFragmentDirections.actionInSecondToThird()
+            findNavController().navigate(action)
         }
 
-        return  binding.root
+        return binding.root
     }
 
 

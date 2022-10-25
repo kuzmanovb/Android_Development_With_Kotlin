@@ -42,6 +42,8 @@
         <action
             android:id="@+id/action_in_fourth_to_first"
             app:destination="@id/firstFragment"
+            app:popUpTo="@id/firstFragment"
+            app:popUpToInclusive="true"
             />
     </fragment>
 </navigation>
