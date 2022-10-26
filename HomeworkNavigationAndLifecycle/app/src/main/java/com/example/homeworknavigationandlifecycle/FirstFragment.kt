@@ -16,7 +16,7 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentFirstBinding.inflate(inflater, container, false)
 
         binding.buttonNextFragment.setOnClickListener {
@@ -26,6 +26,4 @@ class FirstFragment : Fragment() {
 
         return binding.root
     }
-
-
 }

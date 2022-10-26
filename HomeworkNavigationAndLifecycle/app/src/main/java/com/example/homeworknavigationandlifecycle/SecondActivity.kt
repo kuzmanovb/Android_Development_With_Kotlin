@@ -20,6 +20,9 @@ class SecondActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
+    }
 
+    override fun onResume() {
+        super.onResume()
     }
 }

@@ -16,7 +16,7 @@ class ThirdFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentThirdBinding.inflate(inflater, container, false)
 
         binding.buttonNextFragment.setOnClickListener {
