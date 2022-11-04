@@ -13,4 +13,13 @@ class CountriesRepository constructor(
             null
         }
     }
+
+    fun getCountry(countryName:String): Call<Country>? {
+        return try {
+           countryService.getCountry(countryName)
+        } catch (e: Exception) {
+            // an error occurred, handle and act accordingly
+            null
+        }
+    }
 }
