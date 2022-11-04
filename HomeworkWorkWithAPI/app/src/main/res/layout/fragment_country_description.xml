@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/countryName"
-        android:layout_width="168dp"
+        android:layout_width="match_parent"
         android:layout_height="37dp"
         android:layout_marginTop="215dp"
         android:textSize="20sp"
@@ -34,7 +34,7 @@
 
     <TextView
         android:id="@+id/countryCapital"
-        android:layout_width="168dp"
+        android:layout_width="match_parent"
         android:layout_height="37dp"
         android:layout_marginTop="300dp"
         android:textSize="18sp"
@@ -48,7 +48,7 @@
 
     <TextView
         android:id="@+id/countryRegion"
-        android:layout_width="168dp"
+        android:layout_width="match_parent"
         android:layout_height="37dp"
         android:layout_marginTop="380dp"
         android:textAlignment="center"
@@ -62,7 +62,7 @@
 
     <TextView
         android:id="@+id/countryPopulation"
-        android:layout_width="168dp"
+        android:layout_width="match_parent"
         android:layout_height="37dp"
         android:layout_marginTop="548dp"
         android:textSize="15sp"
