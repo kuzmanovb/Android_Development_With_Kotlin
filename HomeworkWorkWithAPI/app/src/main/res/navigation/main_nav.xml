@@ -9,10 +9,14 @@
         android:id="@+id/countriesFragment"
         android:name="net.gostartups.myapplication.CountriesFragment"
         android:label="fragment_countries"
-        tools:layout="@layout/fragment_countries"
-        />
+        tools:layout="@layout/fragment_countries">
+    <action
+        android:id="@+id/action_Countries_to_countryDescription"
+        app:destination="@id/countryDescriptionFragment"/>
+</fragment>
 
-  <fragment
+
+<fragment
       android:id="@+id/countryDescriptionFragment"
       android:name="net.gostartups.myapplication.CountryDescriptionFragment"
       android:label="fragment_country_description"
