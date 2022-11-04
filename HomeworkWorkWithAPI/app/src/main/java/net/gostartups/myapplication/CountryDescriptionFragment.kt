@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import net.gostartups.myapplication.databinding.FragmentCountryDescriptionBinding
 import okhttp3.OkHttpClient
@@ -41,8 +42,19 @@ class CountryDescriptionFragment : Fragment() {
                     response: Response<List<CountryDescription>>
                 ) {
                     val country = response.body() ?: return
-                    var currentCountry = country[0]
-                    var foo = "this"
+                    val currentCountry = country[0]
+                    binding.countryName.text = "Name : ${currentCountry.name}"
+                    binding.countryCapital.text = "Capital : ${currentCountry.capital}"
+                    binding.countryArea.text = "Area : ${currentCountry.area.toString()}"
+                    binding.countryRegion.text ="Region : ${currentCountry.region}"
+                    binding.countryPopulation.text = "Population : ${currentCountry.population.toString()}"
+
+                    Glide
+                        .with(binding.root)
+                        .load(currentCountry.flags.png)
+                        .centerCrop()
+                        .placeholder(R.drawable.ic_launcher_foreground)
+                        .into(binding.flag)
                 }
 
                 override fun onFailure(call: Call<List<CountryDescription>>, t: Throwable) {
