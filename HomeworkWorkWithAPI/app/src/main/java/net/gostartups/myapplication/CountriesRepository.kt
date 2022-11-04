@@ -14,7 +14,7 @@ class CountriesRepository constructor(
         }
     }
 
-    fun getCountry(countryName:String): Call<Country>? {
+    fun getCountry(countryName:String): Call<CountryDescription>? {
         return try {
            countryService.getCountry(countryName)
         } catch (e: Exception) {

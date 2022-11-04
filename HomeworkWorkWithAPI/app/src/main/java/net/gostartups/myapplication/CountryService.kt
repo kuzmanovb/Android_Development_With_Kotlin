@@ -9,5 +9,5 @@ interface CountryService {
     fun getCountries(): Call<List<Country>>
 
     @GET("name/{countryName}")
-    fun getCountry(@Path(value = "countryName") countryName: String ): Call<Country>
+    fun getCountry(@Path(value = "countryName") countryName: String ): Call<CountryDescription>
 }
