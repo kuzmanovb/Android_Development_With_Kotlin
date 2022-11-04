@@ -21,26 +21,5 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
-
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://restcountries.com/v2/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(OkHttpClient())
-            .build()
-
-        val countryService = retrofit.create(CountryService::class.java)
-        val countryRepository = CountriesRepository(countryService)
-        countryRepository.getCountries()?.enqueue(object : Callback<List<Country>> {
-            override fun onResponse(call: Call<List<Country>>, response: Response<List<Country>>) {
-                val countries = response.body() ?: return
-                val adapter = CountryAdapter(countries)
-//                binding.countriesList.adapter = adapter
-            }
-
-            override fun onFailure(call: Call<List<Country>>, t: Throwable) {
-                Snackbar.make(binding.root, "Failed to fetch countries", Snackbar.LENGTH_LONG)
-                    .show()
-            }
-        })
     }
 }
