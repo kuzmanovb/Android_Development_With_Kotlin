@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<Country>>, response: Response<List<Country>>) {
                 val countries = response.body() ?: return
                 val adapter = CountryAdapter(countries)
-                binding.countriesList.adapter = adapter
+//                binding.countriesList.adapter = adapter
             }
 
             override fun onFailure(call: Call<List<Country>>, t: Throwable) {
