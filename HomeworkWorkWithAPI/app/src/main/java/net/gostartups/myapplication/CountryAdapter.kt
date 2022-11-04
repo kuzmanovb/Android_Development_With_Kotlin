@@ -1,7 +1,10 @@
 package net.gostartups.myapplication
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
@@ -34,7 +37,9 @@ class CountryAdapter(private val countries: List<Country>) :
         }
 
         holder.binding.root.setOnClickListener {
-            Snackbar.make(it, currentCountry.name, Snackbar.LENGTH_LONG).show()
+            val data = Bundle()
+            data.putString("countryName", currentCountry.name)
+            it.findNavController().navigate(R.id.action_Countries_to_countryDescription, data)
         }
     }
 
