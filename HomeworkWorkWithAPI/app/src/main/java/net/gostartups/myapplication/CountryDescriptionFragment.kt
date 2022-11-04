@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import net.gostartups.myapplication.databinding.FragmentCountryDescriptionBinding
@@ -63,8 +64,11 @@ class CountryDescriptionFragment : Fragment() {
                 }
             })
 
+        binding.buttonBack.setOnClickListener {
+            it.findNavController().navigate(R.id.action_countryDescription_to_Countries)
+
+        }
+
         return binding.root
     }
-
-
 }

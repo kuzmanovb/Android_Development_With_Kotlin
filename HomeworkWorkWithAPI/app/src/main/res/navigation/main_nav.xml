@@ -24,7 +24,9 @@
       >
       <action
           android:id="@+id/action_countryDescription_to_Countries"
-          app:destination="@id/countriesFragment" />
+          app:destination="@id/countriesFragment"
+          app:popUpTo="@id/countriesFragment"
+          app:popUpToInclusive="true"/>
   </fragment>
 
 
