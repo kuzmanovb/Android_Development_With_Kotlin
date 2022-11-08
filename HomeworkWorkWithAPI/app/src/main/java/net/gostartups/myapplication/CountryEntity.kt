@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class CountryEntity(
-    @PrimaryKey val uid: Int,
+    @PrimaryKey(autoGenerate = true) val uid: Int = 0,
     @ColumnInfo(name = "name") var name: String?,
     @ColumnInfo(name = "capital") var capital: String?,
     @ColumnInfo(name = "flag_url") var flagUrl: String?,
