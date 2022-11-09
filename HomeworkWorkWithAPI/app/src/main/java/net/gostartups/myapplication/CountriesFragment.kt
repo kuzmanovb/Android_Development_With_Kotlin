@@ -80,26 +80,34 @@ class CountriesFragment : Fragment() {
                 }
 
                 override fun onFailure(call: Call<List<Country>>, t: Throwable) {
+
                     Snackbar.make(binding.root, "Failed to fetch countries", Snackbar.LENGTH_LONG)
                         .show()
                 }
             })
         } else {
-            var countries :List<Country>? = null
+            var countries: List<Country>? = null
 
             GlobalScope.launch {
                 val savedCountries = countryDao?.getAllCountries()
-                 countries = savedCountries?.map { it ->
+                countries = savedCountries?.map { it ->
                     Country(
                         name = it.name ?: "",
                         capital = it.capital ?: "",
-                        flags = Flags(png = it.flagUrl ?: "", svg = "test")
+                        flags = Flags(png = it.flagUrl ?: "", svg = "")
                     )
                 }?.toList()
+
+            }
+
+            //workaround for wait get data from room
+            while (countries?.size == null) {
+
             }
 
             val adapter = CountryAdapter(countries ?: listOf<Country>())
             binding.countriesList.adapter = adapter
+
         }
         return binding.root
     }
