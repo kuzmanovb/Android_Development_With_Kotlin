@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="symbol"
+            type="String" />
+
+        <variable
+            name="price"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cryptocurrency_item_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/cryptocurrency_flag"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@android:drawable/star_big_on" />
+
+        <ImageView
+            android:id="@+id/favorite_icon"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:visibility="gone"
+            app:srcCompat="@android:drawable/btn_star_big_on"
+            app:layout_constraintTop_toTopOf="@id/cryptocurrency_flag"
+            app:layout_constraintEnd_toEndOf="@id/cryptocurrency_flag"
+            tools:layout_editor_absoluteX="67dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/cryptocurrency_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:text="@{name}"
+            android:textAllCaps="true"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cryptocurrency_flag"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Cryptocurrency name" />
+
+        <TextView
+            android:id="@+id/cryptocurrency_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="10dp"
+            android:text="@{symbol}"
+            android:textAllCaps="true"
+            android:textColor="#000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cryptocurrency_flag"
+            app:layout_constraintTop_toBottomOf="@id/cryptocurrency_name"
+            tools:text="cryptocurrency symbol" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{price}"
+            android:textColor="#000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cryptocurrency_flag"
+            tools:layout_editor_absoluteY="112dp"
+            tools:text="Cryptocurrency price" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
